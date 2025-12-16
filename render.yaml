@@ -25,13 +25,14 @@ services:
       - key: ADMIN_TELEGRAM_IDS
         sync: false
 
-  # Frontend Static Site
-  - type: static
+  # Frontend Static Site (Served as Web Service with Static Runtime)
+  - type: web
     name: fashion-store-frontend
     env: static
     root: frontend
     buildCommand: npm install && npm run build
-    publish: dist
+    staticPublishPath: dist
+    plan: free
     envVars:
       - key: VITE_API_URL
         fromService:
