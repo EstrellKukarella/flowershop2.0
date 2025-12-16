@@ -3,7 +3,7 @@ services:
   - type: web
     name: fashion-store-backend
     env: node
-    root: backend
+    rootDir: backend
     buildCommand: npm install
     startCommand: npm start
     plan: free
@@ -29,7 +29,7 @@ services:
   - type: web
     name: fashion-store-frontend
     env: static
-    root: frontend
+    rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     plan: free
